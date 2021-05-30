@@ -1,0 +1,12 @@
+name: Experimental workflow on conmment events
+on:
+  issue_comment:
+    types: [created, edited]
+
+jobs:
+  build:
+    name: Comment action
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./action-comment
